@@ -1807,7 +1807,7 @@ public abstract class StargateClassicBaseTile extends StargateAbstractBaseTile i
 
         if (overlay == null) overlay = BiomeOverlayEnum.NORMAL;
 
-        int override = StargateDimensionConfig.getOrigin(DimensionManager.getProviderType(dimId), overlay);
+        int override = StargateDimensionConfig.getOrigin(dimId, overlay);
         if (override >= 0)
             return override;
 
