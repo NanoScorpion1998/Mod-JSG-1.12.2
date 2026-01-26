@@ -83,7 +83,6 @@ public class StargateDimensionConfig {
 
     public static int getOrigin(int dimId, @Nullable BiomeOverlayEnum overlay) {
         if (overlay == null) overlay = BiomeOverlayEnum.NORMAL;
-        if (dim == null) return -1;
         if (dimensionMap == null) {
             try {
                 reload();
