@@ -225,9 +225,9 @@ public class StargateNetwork extends WorldSavedData {
         if (pos.getGateSymbolType() == SymbolTypeEnum.UNIVERSE) {
             // Generate stargate on the main island...
             if (id == 1) {
-                gs = StargateGenerator.mystPageGeneration(pos.getWorld(), EnumStructures.END_UNI, id, new BlockPos(0, 0, 0), 5, 50);
+                gs = StargateGenerator.mystPageGeneration(pos.getWorld(), EnumStructures.END_UNI, id, bp);
             }
-            else gs = StargateGenerator.mystPageGeneration(pos.getWorld(), structure, id, new BlockPos(0, 0, 0), 5, 50);
+            else gs = StargateGenerator.mystPageGeneration(pos.getWorld(), structure, id, bp);
         }
         else
             gs = StargateGenerator.mystPageGeneration(pos.getWorld(), structure, id, bp);
