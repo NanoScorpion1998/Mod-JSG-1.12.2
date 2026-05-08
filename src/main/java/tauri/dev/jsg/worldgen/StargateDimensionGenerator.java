@@ -55,11 +55,11 @@ public class StargateDimensionGenerator {
             if(id == 1) symbolType = SymbolTypeEnum.UNIVERSE;
             //new code sparcky
             StargateDimensionConfigEntry data = StargateDimensionConfig.getDimensionMap().get(id);
-                if (data.groups.contains("milkyway")) {
+                if (data.gateType.contains("milkyway")) {
                     symbolType = SymbolTypeEnum.MILKYWAY;
-                } else if (data.groups.contains("pegasus")) {
+                } else if (data.gateType.contains("pegasus")) {
                     symbolType = SymbolTypeEnum.PEGASUS;
-                } else if (data.groups.contains("universe")){
+                } else if (data.gateType.contains("universe")){
                     symbolType = SymbolTypeEnum.UNIVERSE;
                 }
             //end

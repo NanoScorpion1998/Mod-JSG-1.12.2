@@ -10,18 +10,20 @@ import java.util.Map;
 public class StargateDimensionConfigEntry {
 
     public String name;
+    public String gateType;
     public int distance;
     public ArrayList<String> groups;
     public Map<BiomeOverlayEnum, Integer> milkyWayOrigins;
 
-    public StargateDimensionConfigEntry(String name, int distance,  ArrayList<String> groups) {
-        this(name, distance, groups, new HashMap<>());
+    public StargateDimensionConfigEntry(String name, int distance,  ArrayList<String> groups, String gateType) {
+        this(name, distance, groups, new HashMap<>(), gateType);
     }
 
-    public StargateDimensionConfigEntry(String name, int distance, ArrayList<String> groups, @Nonnull Map<BiomeOverlayEnum, Integer> origins) {
+    public StargateDimensionConfigEntry(String name, int distance, ArrayList<String> groups, @Nonnull Map<BiomeOverlayEnum, Integer> origins, String gateType) {
         this.name = name;
         this.distance = distance;
         this.groups = groups;
+        this.gateType = gateType;
         this.milkyWayOrigins = origins;
         if (this.groups == null)
             this.groups = new ArrayList<>();
