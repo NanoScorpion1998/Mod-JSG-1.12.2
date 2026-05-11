@@ -81,10 +81,8 @@ public class StargateDimensionConfig {
         return reqFrom.isGroupEqual(reqTo);
     }
 
-    public static int getOrigin(DimensionType dimIn, @Nullable BiomeOverlayEnum overlay) {
+    public static int getOrigin(int dimId, @Nullable BiomeOverlayEnum overlay) {
         if (overlay == null) overlay = BiomeOverlayEnum.NORMAL;
-        DimensionType dim = fixDimType(dimIn);
-        if (dim == null) return -1;
         if (dimensionMap == null) {
             try {
                 reload();
@@ -94,14 +92,10 @@ public class StargateDimensionConfig {
         }
         if (dimensionMap == null)
             return -1;
-        StargateDimensionConfigEntry entry = dimensionMap.get(dim.getId());
+        StargateDimensionConfigEntry entry = dimensionMap.get(dimId);
         if (entry == null) return -1;
         if (!entry.milkyWayOrigins.containsKey(overlay)) return -1;
         return entry.milkyWayOrigins.get(overlay);
-    }
-
-    private static DimensionType fixDimType(DimensionType type) {
-        return type.getName().equals("Nether") && type.getId() == -1 ? DimensionType.NETHER : type;
     }
 
     public static boolean netherOverworld8thSymbol() {
