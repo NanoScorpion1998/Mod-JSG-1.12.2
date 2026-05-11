@@ -103,10 +103,48 @@ public enum EnumStructures {
                 add("cold");
             }}, 35, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.MIDDLE),
     // Universe
+    PLAINS_UNI("sg_plains_universe", 0, true, false, SymbolTypeEnum.UNIVERSE, 13, 13, 0, true, JSGConfig.WorldGen.structures.stargateRandomGeneratorEnabled, JSGConfig.WorldGen.structures.stargateRGChanceOverworld, new OverworldProcessor(),
+            new ArrayList<Block>() {{
+                add(Blocks.GRASS);
+                add(Blocks.DIRT);
+                add(Blocks.STONE);
+            }}, null, 35, Rotation.CLOCKWISE_90, 0.8, 0.8, EnumGenerationHeight.MIDDLE),
+    DESERT_UNI("sg_desert_universe", 0, true, false, SymbolTypeEnum.UNIVERSE, 13, 13, 0, true, JSGConfig.WorldGen.structures.stargateRandomGeneratorEnabled, JSGConfig.WorldGen.structures.stargateRGChanceOverworld, new OverworldProcessor(),
+            new ArrayList<Block>() {{
+                add(Blocks.SAND);
+                add(Blocks.SANDSTONE);
+            }},
+            new ArrayList<String>() {{
+                add("desert");
+                add("mesa");
+            }}, 35, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.MIDDLE),
+    FROST_UNI("sg_frosty_universe", 0, true, false, SymbolTypeEnum.UNIVERSE, 13, 13, 0, true, JSGConfig.WorldGen.structures.stargateRandomGeneratorEnabled, JSGConfig.WorldGen.structures.stargateRGChanceOverworld, new OverworldProcessor(),
+            new ArrayList<Block>() {{
+                add(Blocks.SNOW);
+                add(Blocks.SNOW_LAYER);
+                add(Blocks.ICE);
+                add(Blocks.FROSTED_ICE);
+                add(Blocks.PACKED_ICE);
+            }},
+            new ArrayList<String>() {{
+                add("ice");
+                add("frozen");
+                add("cold");
+            }}, 35, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.MIDDLE),
+    MOSSY_UNI("sg_mossy_universe", 0, true, false, SymbolTypeEnum.UNIVERSE, 13, 13, 0, true, JSGConfig.WorldGen.structures.stargateRandomGeneratorEnabled, JSGConfig.WorldGen.structures.stargateRGChanceOverworld, new OverworldProcessor(),
+            new ArrayList<Block>() {{
+                add(Blocks.GRASS);
+                add(Blocks.DIRT);
+                add(Blocks.STONE);
+            }},
+            new ArrayList<String>() {{
+                add("taiga");
+            }}, 35, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.MIDDLE),
     END_UNI("sg_end_universe", 0, true, false, SymbolTypeEnum.UNIVERSE, 10, 10, 1, true, JSGConfig.WorldGen.structures.stargateRandomGeneratorEnabled, JSGConfig.WorldGen.structures.stargateRGChanceTheEnd, new OverworldProcessor(),
             new ArrayList<Block>() {{
                 add(Blocks.END_STONE);
-            }}, null, 15, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.LOW),
+            }},
+            null, 15, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.LOW),
 
     // Nether
     NETHER_MW("sg_nether_milkyway", 0, true, false, SymbolTypeEnum.MILKYWAY, 16, 16, -1, false, false, 0, new NetherProcessor(),
@@ -147,7 +185,7 @@ public enum EnumStructures {
             null, null, 35, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.MIDDLE, true),
     INTERNAL_PG("sg_plains_pegasus", 0, true, false, SymbolTypeEnum.PEGASUS, 13, 13, 0, true, false, 0, new OverworldProcessor(),
             null, null, 35, Rotation.CLOCKWISE_90, 0.8, 0.8, EnumGenerationHeight.MIDDLE, true),
-    INTERNAL_UNI("sg_end_universe", 0, true, false, SymbolTypeEnum.UNIVERSE, 10, 10, 1, true, false, 0, new OverworldProcessor(),
+    INTERNAL_UNI("sg_plains_universe", 0, true, false, SymbolTypeEnum.UNIVERSE, 10, 10, 1, true, false, 0, new OverworldProcessor(),
             null, null, 15, Rotation.CLOCKWISE_90, 0.7, 0.8, EnumGenerationHeight.LOW, true),
     ;
 

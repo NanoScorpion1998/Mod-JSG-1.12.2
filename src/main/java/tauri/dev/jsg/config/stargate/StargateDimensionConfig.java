@@ -22,27 +22,33 @@ public class StargateDimensionConfig {
     private static File dimensionConfigFile;
     private static Map<Integer, StargateDimensionConfigEntry> dimensionIntMap;
     private static Map<Integer, StargateDimensionConfigEntry> dimensionMap;
+    //new code sparcky
+    public static Map<Integer, StargateDimensionConfigEntry> getDimensionMap() {
+        return dimensionMap;
+    }
+    //end
+
 
     static {
-        DEFAULTS_MAP.put("overworld", new StargateDimensionConfigEntry("overworld", 0, new ArrayList<String>() {{
+        DEFAULTS_MAP.put("overworld", new StargateDimensionConfigEntry("overworld", 0, new ArrayList<String>()  {{
             add("netherOv");
-        }}));
+        }},"milkyway"));
         DEFAULTS_MAP.put("the_nether", new StargateDimensionConfigEntry("the_nether", 5, new ArrayList<String>() {{
             add("netherOv");
         }}, new HashMap<BiomeOverlayEnum, Integer>() {{
             put(BiomeOverlayEnum.NORMAL, 2);
-        }}));
+        }},"milkyway"));
         DEFAULTS_MAP.put("the_end", new StargateDimensionConfigEntry("the_end", 10, new ArrayList<>(), new HashMap<BiomeOverlayEnum, Integer>() {{
             put(BiomeOverlayEnum.NORMAL, 1);
-        }}));
-        DEFAULTS_MAP.put("moon.moon", new StargateDimensionConfigEntry("moon.moon", 15, new ArrayList<>()));
+        }},"milkyway"));
+        DEFAULTS_MAP.put("moon.moon", new StargateDimensionConfigEntry("moon.moon", 15, new ArrayList<>(),"milkyway"));
         DEFAULTS_MAP.put("planet.mars", new StargateDimensionConfigEntry("planet.mars", 40, new ArrayList<>(), new HashMap<BiomeOverlayEnum, Integer>() {{
             put(BiomeOverlayEnum.NORMAL, 4);
-        }}));
+        }},"milkyway"));
         DEFAULTS_MAP.put("planet.venus", new StargateDimensionConfigEntry("planet.venus", 37, new ArrayList<>(), new HashMap<BiomeOverlayEnum, Integer>() {{
             put(BiomeOverlayEnum.NORMAL, 4);
-        }}));
-        DEFAULTS_MAP.put("planet.asteroids", new StargateDimensionConfigEntry("planet.asteroids", 63, new ArrayList<>()));
+        }},"milkyway"));
+        DEFAULTS_MAP.put("planet.asteroids", new StargateDimensionConfigEntry("planet.asteroids", 63, new ArrayList<>(),"milkyway"));
     }
 
     public static EnergyRequiredToOperate getCost(int fromDimId, int toDimId) {
@@ -148,7 +154,7 @@ public class StargateDimensionConfig {
                 if (DEFAULTS_MAP.containsKey(dimType.getName()))
                     dimensionMap.put(dimId, DEFAULTS_MAP.get(dimType.getName()));
                 else
-                    dimensionMap.put(dimId, new StargateDimensionConfigEntry(dimType.getName(), dimId * 5, null));
+                    dimensionMap.put(dimId, new StargateDimensionConfigEntry(dimType.getName(), dimId * 5, null,"milkyway"));
             }
         }
 
